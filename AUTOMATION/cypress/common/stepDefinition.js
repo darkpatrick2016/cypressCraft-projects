@@ -156,4 +156,36 @@ When("el usuario regresa a la página anterior", () => {
 When('se espera {int} segundos',(seconds)=>{
     pageObject._waitFormSeconds(seconds);
 });
+//El scope es para el forms.feature
+When('selecciona la fecha de nacimiento {string} de {string} de {string}', (day, month, year) => {
+    
+    const forms = pom.forms; 
 
+    // 1. Abrir el calendario
+    forms.elements.dateOfBirth().click(); 
+
+    // 2. Seleccionar el AÑO
+    forms.elements.calendarYear().select(year); 
+
+    // 3. Seleccionar el MES
+    forms.elements.calendarMonth().select(month); 
+
+    // 4. Clic en el DÍA (lógica dinámica)
+    const dayPadded = String(day).padStart(3, '0');
+    const daySelector = `.react-datepicker__day--${dayPadded}:not(.react-datepicker__day--outside-month)`;
+
+    // Buscar el día y hacer clic
+    cy.get(daySelector).click();
+});
+//El scope es para el feature.forms
+When('ingresa las materias {string}', (subjectList) => {
+    
+    const forms = pom.forms; 
+    const subjectsArray = subjectList.split(',').map(s => s.trim());
+    subjectsArray.forEach(subject => {
+        if (subject) {
+            forms.elements.subjectsInput().type(subject);
+            forms.elements.subjectsInput().type('{enter}'); 
+        }
+    });
+});
