@@ -3,6 +3,7 @@ import comments from './api/api.02-comments.pom';
 import login from './e2e/e2e.01-login.pom';
 import products from './e2e/e2e.02-products.pom';
 import elements from './e2e/e2e.03-elements.pom';
+import forms from './e2e/e2e.04-forms.pom';
 
 export default {
     posts,
@@ -10,4 +11,5 @@ export default {
     login,
     products,
     elements,
+    forms,
 }

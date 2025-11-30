@@ -20,6 +20,7 @@ class Urls {
             "comments"    : `${baseUrl}/comments`,
             "login"       : 'https://www.saucedemo.com',
             "elements"    : 'https://demoqa.com',
+            "forms"       : 'https://demoqa.com',
         };
     }
     

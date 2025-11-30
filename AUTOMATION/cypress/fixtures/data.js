@@ -7,7 +7,7 @@ class Data {
     constants() {
         //here set data constant for all environments
         return {
-            SERVICES_LIST   : ['posts', 'comments', 'login', 'products', 'elements'],
+            SERVICES_LIST   : ['posts', 'comments', 'login', 'products', 'elements','forms'],
             METHODS_LIST    : [
                 'POST',
                 'GET',
