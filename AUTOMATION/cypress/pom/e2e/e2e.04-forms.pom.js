@@ -28,7 +28,7 @@ class Forms extends Main{
             citySelect : () => cy.contains('Select City'),
             cityOne : () => cy.get('#react-select-4-option-0'),
             cityTwo : () => cy.get('#react-select-4-option-1'),
-            cityThree : () => cy.get('#react-select-4-option-2'),
+            cityThree : () => cy.get('#react-select-4-option-1'),
             btnsubmit : () => cy.get('#submit'),
             responseForm : () => cy.get('#example-modal-sizes-title-lg'),
 
